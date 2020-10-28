@@ -46,20 +46,21 @@ function setup() {
 
 
 function draw() {
-  rectMode(CENTER);
+	keyPressed();
+	ellipseMode(RADIUS);
+  ellipse(package.position.x,package.position.y,10,10)
+  
   background(0);
-  packageSprite.x= packageBody.position.x 
-  packageSprite.y= packageBody.position.y 
+  Engine.update(engine);
+  package.x= packageBody.position.x 
+  package.y= packageBody.position.y 
   drawSprites();
  
 }
 
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
-	Matter.Body.setStatic(packageBody, false);
-
-    // Look at the hints in the document and understand how to make the package body fall only on
-    
+   Matter.Body.setStatic(packageBody,false)
   }
 }
 
